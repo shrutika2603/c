@@ -1,4 +1,5 @@
 #include <stdio.h>
+
 int ispalindrome(int n);
 int main()
 {
@@ -14,18 +15,21 @@ int main()
 int ispalindrome(int n){
     if (n==reverse(n))
         return 1;
+    return 0;
 }
 
 int reverse(int n)
 {
-    int rem, original, rev;
-    n=original;
-    rev=0;
+    int rem;
+    static int rev=0;
     if(n!=0)
     {
         rem = n % 10;
         rev = rev * 10 + rem;
-        n = n / 10;
+        reverse(n / 10);
+    }
+    else{
+        return rev;
     }
     return rev;  
 }
