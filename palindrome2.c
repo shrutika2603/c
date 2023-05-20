@@ -33,3 +33,33 @@ int reverse(int n)
     }
     return rev;  
 }
+
+/*
+#include <stdio.h>
+
+int isPalindrome(int number, int temp) {
+    if (number == 0)
+        return temp;
+
+    temp = (temp * 10) + (number % 10);
+    return isPalindrome(number / 10, temp);
+}
+
+int checkPalindrome(int number) {
+    int reverse = isPalindrome(number, 0);
+    return reverse == number;
+}
+
+int main() {
+    int number;
+    printf("Enter a number: ");
+    scanf("%d", &number);
+
+    if (checkPalindrome(number))
+        printf("%d is a palindrome.\n", number);
+    else
+        printf("%d is not a palindrome.\n", number);
+
+    return 0;
+}
+*/
