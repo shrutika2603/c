@@ -1,21 +1,22 @@
-// Recursive C program to find sum of digits
-// of a number
 #include <stdio.h>
 
-// Function to check sum of digit using recursion
-int sum_of_digit(int n)
-{
-	if (n == 0)
-	return 0;
-	return (n % 10 + sum_of_digit(n / 10));
+int printSum(int n);
+
+int main(){
+    int n;
+    int sum=0;
+    printf("Enter a number: ");
+    scanf("%d", &n);
+    sum = printSum(n);
+    printf("The sum of digits is : %d\n", sum);
+    return 0;
 }
 
-// Driven Program to check above
-int main()
-{
-	int num;
-    scanf("%d",&num);
-	int result = sum_of_digit(num);
-	printf("Sum of digits in %d is %d\n", num, result);
-	return 0;
+int printSum(int n){
+    if (n!=0){
+        return(n%10+printSum(n/10));
+    }
+    else{
+        return 0;
+    }
 }
